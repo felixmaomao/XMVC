@@ -5,7 +5,7 @@ using System.Web;
 using XMVC;
 namespace XMVCTest
 {
-    public class TestController
+    public class TestController:Controller
     {
         public void sayhi(HttpContext context)
         {

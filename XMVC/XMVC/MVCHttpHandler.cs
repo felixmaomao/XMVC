@@ -151,22 +151,33 @@ namespace XMVC
 
             //显然更好的做法 应该是项目启动的时候 ，就将所有的controller以及相关信息 全部查询好 然后放在一个像字典一样的地方 存储起来（或者说缓存起来），下次要用直接到这边来取就ok
             //显然这个字典的结构会很复杂，像新华字典一样  而且我们需要一个专门的类用来负责项目启动的时候 将这个字典填满（不过这将导致 第一次启动特别慢？如何优化？并行？）
-            //看样子 下面的这种写法有点接近成功了，已成功的讲请求分流至各controller和action
-            if (TypeCacheUtil.Cache.ContainsKey(controllername + "Controller"))
-            {
-                Dictionary<string,Type> dic=TypeCacheUtil.Cache[controllername+"Controller"];
-                KeyValuePair<string, Type> pair = dic.ElementAt(0);   //暂时认为是第一个,不考虑重名的
-                Type type = pair.Value;
-                Assembly assembly = type.Assembly;
-                var instance = assembly.CreateInstance(type.ToString());
-                MethodInfo method = type.GetMethod(actionname);
-                method.Invoke(instance,new object[]{context});
-            }
-            else
-            {
-                context.Response.Write("嘿嘿 ，没有找到合适的处理请求！");
-            }
+            //看样子 下面的这种写法有点接近成功了，已成功的将请求分流至各controller和action
+            //接下来 就是丰富 IController家族自身的功能，以及使用 IControllerFactory来创建实例了
+            #region 算是一大步迈进
+            //if (TypeCacheUtil.Cache.ContainsKey(controllername + "Controller"))
+            //{
+            //    Dictionary<string,Type> dic=TypeCacheUtil.Cache[controllername+"Controller"];
+            //    KeyValuePair<string, Type> pair = dic.ElementAt(0);   //暂时认为是第一个,不考虑重名的
+            //    Type type = pair.Value;
+            //    Assembly assembly = type.Assembly;
+            //    var instance = assembly.CreateInstance(type.ToString());
+            //    MethodInfo method = type.GetMethod(actionname);
+            //    method.Invoke(instance,new object[]{context});
+            //}
+            //else
+            //{
+            //    context.Response.Write("嘿嘿 ，没有找到合适的处理请求！");
+            //}
+            #endregion
 
+            //接下来 应用工厂模式，以及将功能实现转移到controller内部
+
+            IController controller;
+            IControllerFactory factory;
+            factory = new DefaultControllerFactory();    //这边又写死了 指定了默认的工厂。（隐约感觉到写框架的艺术在哪里，难点在哪里）
+            controller = factory.CreateControllerInstance(RequestContext);
+            ControllerContext controllercontext = new ControllerContext {RequestContext=RequestContext,HttpContext=context };
+            controller.Execute(controllercontext);
         }        
     }
 }
