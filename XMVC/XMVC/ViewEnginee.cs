@@ -8,6 +8,7 @@ using System.Web;
 
 namespace XMVC
 {
+    //这是我们的初代视图引擎，用于读取静态文件，并输出。
     public static class ViewEnginee
     {
         public static string LoadFile(string filename)
@@ -22,7 +23,7 @@ namespace XMVC
             }            
         }
 
-        public static void View(object obj,string filename,HttpContext context)
+        public static void RenderView(object obj,string filename,HttpContext context)
         {
             string htmlstr = LoadFile(filename);
             context.Response.Write(htmlstr);

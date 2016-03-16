@@ -41,7 +41,7 @@ namespace XMVC
             //    context.Response.Write("</div>");
             //}
             #endregion
-            //是可以直接通过 HttpContext.Response.Write() 向浏览器发送字符字符的(静态网页)
+            //是可以直接通过 HttpContext.Response.Write() 向浏览器发送字符字符的(静态网页) 当然也可以通过读取html文件来输出
             //对请求进行分流
 
             string controllername = RequestContext.RouteData.GetRequiredString("Controller");
@@ -149,7 +149,7 @@ namespace XMVC
             //}
             #endregion
 
-            //显然更好的做法 应该是项目启动的时候 ，就将所有的controller以及相关信息 全部查询好 然后放在一个像字典一样的地方 存储起来（或者说缓存起来），下次要用直接到这边来取就ok
+            //显然更好的做法 应该是项目启动的时候 ，就将所有的controller以及相关信息 全部查询好 然后放在一个像字典一样的地方 存储起来（或者说缓存起来），下次要用直接到这边来取就ok,这样子才能够更快速
             //显然这个字典的结构会很复杂，像新华字典一样  而且我们需要一个专门的类用来负责项目启动的时候 将这个字典填满（不过这将导致 第一次启动特别慢？如何优化？并行？）
             //看样子 下面的这种写法有点接近成功了，已成功的讲请求分流至各controller和action
             if (TypeCacheUtil.Cache.ContainsKey(controllername + "Controller"))
