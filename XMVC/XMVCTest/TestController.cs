@@ -6,7 +6,7 @@ using XMVC;
 using XMVCTest.Models;
 namespace XMVCTest
 {
-    public class TestController
+    public class TestController:Controller
     {
 
         //我们这里的做法还停留在直接暴露httpcontext进行输出。我们真是的是需要一个html模板，以及相应的引擎来整合我们的模板。

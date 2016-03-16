@@ -41,6 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
+    <Compile Include="ControllerBase.cs" />
+    <Compile Include="ControllerContext.cs" />
+    <Compile Include="DefaultActionInvoker.cs" />
+    <Compile Include="DefaultControllerFactory.cs" />
+    <Compile Include="IActionInvoker.cs" />
+    <Compile Include="IController.cs" />
+    <Compile Include="IControllerFactory.cs" />
     <Compile Include="MVCHttpHandler.cs" />
     <Compile Include="MVCRouteHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -32,7 +32,7 @@ namespace XMVC
 
         public static void FillInTheCache()
         {
-            ICollection allReferencedAssemblies = BuildManager.GetReferencedAssemblies();           
+            ICollection allReferencedAssemblies = BuildManager.GetReferencedAssemblies();              
             foreach (Assembly assembly in allReferencedAssemblies)
             {
                 Type[] types = assembly.GetTypes();
