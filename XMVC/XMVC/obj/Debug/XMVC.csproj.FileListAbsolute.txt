@@ -1,0 +1,5 @@
+F:\Personal\XMVC\XMVC\XMVC\bin\Debug\XMVC.dll
+F:\Personal\XMVC\XMVC\XMVC\bin\Debug\XMVC.pdb
+F:\Personal\XMVC\XMVC\XMVC\obj\Debug\XMVC.csprojResolveAssemblyReference.cache
+F:\Personal\XMVC\XMVC\XMVC\obj\Debug\XMVC.dll
+F:\Personal\XMVC\XMVC\XMVC\obj\Debug\XMVC.pdb

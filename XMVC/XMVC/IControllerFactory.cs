@@ -8,7 +8,7 @@ namespace XMVC
 {
     public interface IControllerFactory
     {
-        IController CreateControllerInstance(RequestContext context);
+        IController CreateControllerInstance(ControllerContext context);
         IController CreateControllerInstance(Type t);
     }
 }

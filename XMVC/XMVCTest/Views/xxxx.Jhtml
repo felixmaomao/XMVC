@@ -1,11 +1,26 @@
 ﻿<html>
+<head>
+<link href="../CSS/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../JS/bootstrap.min.js" type="text/javascript"></script>
+</head>
 <h1>
 hello  we are successed . This our first version of View Enginee.
 </h1>
-<table  border="1">
+
+<button class="btn btn-primary">Hello</button>
+<button class="btn btn-danger">danger</button>
+
+<br/>
+
+the difficulty of self built viewenginee is not the vieweenginee it self.
+it is the intellisence of code tips.
+
+<table  border="1" class="table table-bordered table-hover">
  <tr>
   <td>Hello XMVC </td>  <td> Nice To Meet You</td>
  <tr>
+ <tr>
+  <td>we always feel just about the outer feel.</td><td></td>
+ </tr>
 </table>
-
 </html>

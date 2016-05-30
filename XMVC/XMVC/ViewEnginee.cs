@@ -8,7 +8,7 @@ using System.Web;
 
 namespace XMVC
 {
-    //这是我们的初代视图引擎，用于读取静态文件，并输出。
+    //this is our first version of viewenginee. it serves static files only.
     public static class ViewEnginee
     {
         public static string LoadFile(string filename)

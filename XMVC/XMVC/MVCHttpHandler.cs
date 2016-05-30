@@ -175,8 +175,8 @@ namespace XMVC
             IController controller;
             IControllerFactory factory;
             factory = new DefaultControllerFactory();    //这边又写死了 指定了默认的工厂。（隐约感觉到写框架的艺术在哪里，难点在哪里）
-            controller = factory.CreateControllerInstance(RequestContext);
-            ControllerContext controllercontext = new ControllerContext {RequestContext=RequestContext,HttpContext=context };
+            ControllerContext controllercontext = new ControllerContext { RequestContext = RequestContext, HttpContext = context };
+            controller = factory.CreateControllerInstance(controllercontext);            
             controller.Execute(controllercontext);
         }        
     }

@@ -10,6 +10,7 @@ namespace XMVC
 {
     public static class ViewEnginee_V2
     {
+        //build a absolutely new viewenginee is another big project.so in our own mvc pro .we'd like to use razor at the beginning.
         public static string LoadFile(string filename)
         {
             using (FileStream fsRead = new FileStream(filename, FileMode.Open))

@@ -9,6 +9,9 @@ namespace XMVC
 {
     public interface IActionInvoker
     {
-        void InvokeAction(string actionname,ControllerContext context);
+        //every iactioninvoker should own it's controllercontext.
+        ControllerContext Context { get; set; } 
+
+        void InvokeAction(string actionname);
     }
 }
