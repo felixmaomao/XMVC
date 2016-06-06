@@ -189,8 +189,8 @@ namespace XMVC
             #endregion
         }
         public void ProcessRequestInit(out IControllerFactory fac,out IController controller,ControllerContext context)
-        {           
-            fac = new DefaultControllerFactory();  //很抱歉 这边还是写死了。这边是期望暴露给外界去配置的。
+        {
+            fac = ControllerBuilder.Current.GetControllerFactory();
             controller = fac.CreateControllerInstance(context);
         }
 

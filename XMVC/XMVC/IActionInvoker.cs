@@ -12,7 +12,7 @@ namespace XMVC
         //every iactioninvoker should own it's controllercontext.
         ControllerContext Context { get; set; } 
 
-        void InvokeAction(string actionname);
+        bool InvokeAction(string actionname);
 
     }
 }

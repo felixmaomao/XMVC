@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Controller.cs" />
     <Compile Include="ControllerBase.cs" />
+    <Compile Include="ControllerBuilder.cs" />
     <Compile Include="ControllerContext.cs" />
     <Compile Include="DefaultActionInvoker.cs" />
     <Compile Include="DefaultControllerFactory.cs" />

@@ -21,8 +21,9 @@ namespace XMVC
             this.Context = context;
         }
                    
-        public void InvokeAction(string actionname)
+        public bool InvokeAction(string actionname)
         {
+            bool flag = true;
             string controllername =Context.RequestContext.RouteData.GetRequiredString("Controller");
             if (TypeCacheUtil.Cache.ContainsKey(controllername + "Controller"))
             {
@@ -35,14 +36,16 @@ namespace XMVC
                 if (method == null)
                 {
                     Context.HttpContext.Response.Write("嘿嘿 ，没有找到合适的处理请求！");
-                    return;
+                    flag=false;
                 }
                 method.Invoke(instance, new object[] { Context.HttpContext });
             }
             else
             {
                 Context.HttpContext.Response.Write("嘿嘿 ，没有找到合适的处理请求！");
+                flag = false;
             }
+            return flag;
         }
     }
 }

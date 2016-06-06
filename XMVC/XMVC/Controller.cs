@@ -40,7 +40,15 @@ namespace XMVC
         public override void ExecuteCore(ControllerContext context)
         {
             string actionname = context.RequestContext.RouteData.GetRequiredString("Action");
-            ActionInvoker.InvokeAction(actionname);
+            if (!ActionInvoker.InvokeAction(actionname))
+            {
+                HandleUnKnownAction(actionname);
+            }
+        }
+
+        public void HandleUnKnownAction(string actionname)
+        {
+            
         }
     }
 }
