@@ -13,5 +13,6 @@ namespace XMVC
         ControllerContext Context { get; set; } 
 
         void InvokeAction(string actionname);
+
     }
 }

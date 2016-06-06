@@ -91,30 +91,30 @@ namespace XMVC
             #endregion
 
             #region 部分死的写法
-//            ICollection allReferencedAssemblies = BuildManager.GetReferencedAssemblies();
-//            bool findmatch = false;
-//            foreach(Assembly item in allReferencedAssemblies)
-//            {
-//                Type match = item.GetType("XMVCTest."+controllername+"Controller");  //这边还是写死的
-//                if (match != null)
-//                {
-//                    var instance = item.CreateInstance(match.ToString());
-//                    MethodInfo method = match.GetMethod(actionname);
-//                    method.Invoke(instance, new object[] { context });
-//                    findmatch = true;                   
-//                }                
-//            }
-//            if(!findmatch)
-//            {
-//                string script = @"<script type='text/javascript'>
-//                               alert('嘿嘿，没找到您要的界面');
-//                              </script>";
-//                context.Response.Write(script);
-//            }
+            //            ICollection allReferencedAssemblies = BuildManager.GetReferencedAssemblies();
+            //            bool findmatch = false;
+            //            foreach(Assembly item in allReferencedAssemblies)
+            //            {
+            //                Type match = item.GetType("XMVCTest."+controllername+"Controller");  //这边还是写死的
+            //                if (match != null)
+            //                {
+            //                    var instance = item.CreateInstance(match.ToString());
+            //                    MethodInfo method = match.GetMethod(actionname);
+            //                    method.Invoke(instance, new object[] { context });
+            //                    findmatch = true;                   
+            //                }                
+            //            }
+            //            if(!findmatch)
+            //            {
+            //                string script = @"<script type='text/javascript'>
+            //                               alert('嘿嘿，没找到您要的界面');
+            //                              </script>";
+            //                context.Response.Write(script);
+            //            }
             #endregion
 
             #region 很不舒服的达到目的,但是这样写太愚蠢了，而且难道每次执行一次请求难道都整个dll全部遍历寻找一遍？            
-            
+
             //ICollection allReferencedAssemblies = BuildManager.GetReferencedAssemblies();
             //List<Type> matched_types = new List<Type>();
             //foreach (Assembly assembly in allReferencedAssemblies)
@@ -171,13 +171,29 @@ namespace XMVC
             #endregion
 
             //接下来 应用工厂模式，以及将功能实现转移到controller内部
+            #region 迟钝的写法的写法
+            //IController controller;
+            //IControllerFactory factory;
+            //factory = new DefaultControllerFactory();    //这边又写死了 指定了默认的工厂。（隐约感觉到写框架的艺术在哪里，难点在哪里）
+            //ControllerContext controllercontext = new ControllerContext { RequestContext = RequestContext, HttpContext = context };
+            //controller = factory.CreateControllerInstance(controllercontext);            
+            //controller.Execute(controllercontext);
+            #endregion
 
-            IController controller;
+            #region 行云流水的写法
             IControllerFactory factory;
-            factory = new DefaultControllerFactory();    //这边又写死了 指定了默认的工厂。（隐约感觉到写框架的艺术在哪里，难点在哪里）
-            ControllerContext controllercontext = new ControllerContext { RequestContext = RequestContext, HttpContext = context };
-            controller = factory.CreateControllerInstance(controllercontext);            
+            IController controller;
+            ControllerContext controllercontext = new ControllerContext {RequestContext=this.RequestContext,HttpContext=context };
+            ProcessRequestInit(out factory,out controller,controllercontext);
             controller.Execute(controllercontext);
-        }        
+            #endregion
+        }
+        public void ProcessRequestInit(out IControllerFactory fac,out IController controller,ControllerContext context)
+        {           
+            fac = new DefaultControllerFactory();  //很抱歉 这边还是写死了。这边是期望暴露给外界去配置的。
+            controller = fac.CreateControllerInstance(context);
+        }
+
+
     }
 }
