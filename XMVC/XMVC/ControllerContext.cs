@@ -19,5 +19,10 @@ namespace XMVC
             get;
             set;
         }
+        public ControllerBase Controller
+        {
+            get;
+            set;
+        }
     }
 }
