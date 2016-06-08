@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 using System.Reflection;
 namespace XMVC
 {
-    public class ParameterDescriptor : ICustomAttributeProvider
+    public abstract class ParameterDescriptor : ICustomAttributeProvider
     {
+        public abstract string ParameterName
+        {
+            get;            
+        }
+        public abstract Type ParameterType
+        {
+            get;
+        }
+
+
         public object[] GetCustomAttributes(bool inherit)
         {
             throw new NotImplementedException();

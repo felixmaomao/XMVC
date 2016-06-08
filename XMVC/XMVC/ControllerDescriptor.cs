@@ -9,9 +9,9 @@ namespace XMVC
     //对于某个controller的描述
     public abstract class ControllerDescriptor : ICustomAttributeProvider
     {
-        public string ControllerName { get; }
+        public abstract string ControllerName { get; }
         public abstract Type ControllerType { get; set; }
-        public string UniqueID { get; set; }
+        public abstract string UniqueID { get; set; }
 
         public abstract ActionDescriptor FindAction(ControllerContext context, string actionName);
         public abstract ActionDescriptor[] GetCanonicalActions();

@@ -63,6 +63,7 @@
     <Compile Include="MVCRouteHandler.cs" />
     <Compile Include="ParameterDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectedActionDescriptor.cs" />
     <Compile Include="ReflectedControllerDescriptor.cs" />
     <Compile Include="TypeCacheUtil.cs" />
     <Compile Include="ViewEnginee.cs" />

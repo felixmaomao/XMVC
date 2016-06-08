@@ -10,10 +10,29 @@ namespace XMVC
     {
         public ReflectedControllerDescriptor(Type controllerType)
         {
+            this.ControllerType = controllerType;
+        }
 
+        public override string ControllerName
+        {
+            get
+            {
+                string typeName = ControllerType.Name.ToString();
+                if (typeName.EndsWith("Controller"))
+                {
+                   return typeName.Substring(0,typeName.Length-"Controller".Length);                   
+                }
+                return typeName;
+            }
         }
 
         public override Type ControllerType
+        {
+            get;
+            set;
+        }
+
+        public override string UniqueID
         {
             get
             {
@@ -28,7 +47,8 @@ namespace XMVC
 
         public override ActionDescriptor FindAction(ControllerContext context, string actionName)
         {
-            throw new NotImplementedException();
+            
+
         }
 
         public override ActionDescriptor[] GetCanonicalActions()

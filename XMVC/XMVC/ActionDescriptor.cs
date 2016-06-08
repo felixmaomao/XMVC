@@ -9,8 +9,8 @@ namespace XMVC
     public abstract class ActionDescriptor : ICustomAttributeProvider
     {
         public abstract string ActionName { get; }
-        public virtual string UniqueID { get; }
-        public ControllerDescriptor ControllerDescriptor { get; }
+        public abstract string UniqueID { get; }
+        public virtual ControllerDescriptor ControllerDescriptor { get; }
 
         public abstract object Execute(ControllerContext context,IDictionary<string,object> parameters);
         public abstract ParameterDescriptor[] GetParameters();
