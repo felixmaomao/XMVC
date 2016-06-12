@@ -132,7 +132,6 @@ namespace XMVC
 
         #region 自己的实现
 
-
         public DefaultActionInvoker(ControllerContext context)
         {
             this.Context = context;
@@ -150,6 +149,7 @@ namespace XMVC
             }
         }
 
+        //如果不考虑特性等什么的，是根本不需要这一堆descriptor来包装的。直接简单明了的就ok
         public bool InvokeAction(string actionname)
         {
             //get controller descriptor
