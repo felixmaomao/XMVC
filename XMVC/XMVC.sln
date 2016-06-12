@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMVC", "XMVC\XMVC.csproj", "{CE9B6379-1538-4180-AAAA-C66E7552C677}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMVCTest", "XMVCTest\XMVCTest.csproj", "{34BB8653-72F5-4092-8282-E00146D6CA8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMVC_V2", "XMVC_V2\XMVC_V2.csproj", "{F7431FF4-2503-4546-A33F-872805FB95DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{34BB8653-72F5-4092-8282-E00146D6CA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34BB8653-72F5-4092-8282-E00146D6CA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34BB8653-72F5-4092-8282-E00146D6CA8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7431FF4-2503-4546-A33F-872805FB95DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7431FF4-2503-4546-A33F-872805FB95DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7431FF4-2503-4546-A33F-872805FB95DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7431FF4-2503-4546-A33F-872805FB95DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
