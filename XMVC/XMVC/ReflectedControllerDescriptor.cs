@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Reflection;
 namespace XMVC
 {
     public class ReflectedControllerDescriptor : ControllerDescriptor
@@ -47,9 +47,15 @@ namespace XMVC
 
         public override ActionDescriptor FindAction(ControllerContext context, string actionName)
         {
-            
-
+            MethodInfo matched = FindActionMethod(context,actionName);                    
+            return new ReflectedActionDescriptor(matched);
         }
+        public MethodInfo FindActionMethod(ControllerContext context,string actionName)
+        {
+            //todo
+            return null;
+        }
+
 
         public override ActionDescriptor[] GetCanonicalActions()
         {

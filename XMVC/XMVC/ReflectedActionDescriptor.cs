@@ -24,6 +24,11 @@ namespace XMVC
             }
         }
 
+        public ReflectedActionDescriptor(MethodInfo methodInfo)
+        {
+            
+        }
+
         public override object Execute(ControllerContext context, IDictionary<string, object> parameters)
         {
             throw new NotImplementedException();
