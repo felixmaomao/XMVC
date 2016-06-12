@@ -205,7 +205,9 @@ namespace XMVC
 
         public object GetParameter(ControllerContext controllerContext,ParameterDescriptor parameterDescriptor)
         {
-           //写代码应该像写作文一样
+            //coding should be like writing
+            Type parameterType = parameterDescriptor.GetType();
+
 
         }
 
