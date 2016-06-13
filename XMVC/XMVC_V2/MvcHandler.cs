@@ -22,14 +22,15 @@ namespace XMVC_V2
             ControllerContext controllerContext = new ControllerContext { HttpContext = context};
             IControllerFactory controllerFactory;
             IController controller;
-            ProcessInit(out controllerFactory,out controller);
+            ProcessInit(out controllerFactory,out controller,controllerContext);
             controller.Execute();
         }
-        public void ProcessInit(out IControllerFactory controllerFactory,out IController controller)
+        public void ProcessInit(out IControllerFactory controllerFactory,out IController controller,ControllerContext controllerContext)
         {
             //Instanciate controllerFactory
-            controllerFactory = null;
-            controller = null;
+            controllerFactory = new DefaultControllerFactory();
+            controller = controllerFactory.CreateController(controllerContext);
+            //关于这边的写法，我认为controllerContext不应该属于defaultcontrollerfactory，而应该只是作为外界传进去的一个参数，所以不应该把controllerContext作为工厂的一个属性或者变量存在。
         }
 
     }

@@ -13,5 +13,14 @@ namespace XMVC_V2
         {
             get;set;
         }
+        public RequestContext RequestContext
+        {
+            get;set;
+        }
+        public RouteData RouteData
+        {
+            get;set;
+        }
+
     }
 }
