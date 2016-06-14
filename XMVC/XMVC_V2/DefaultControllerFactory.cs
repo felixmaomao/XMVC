@@ -11,15 +11,23 @@ namespace XMVC_V2
         public IController CreateController(string controllerName)
         {
             Type controllerType = GetControllerType(controllerName);
-            return Activator.CreateInstance(controllerType) as IController;
+            if (controllerType != null)
+            {
+                return Activator.CreateInstance(controllerType) as IController;
+            }
+            else
+            {
+                return null;
+            }
+            
         }
 
         public Type GetControllerType(string controllerName)
         {
             Dictionary<string, Dictionary<string, Type>> dict = ControllerTypeCache.Cache;
-            if (dict.ContainsKey(controllerName))
+            if (dict.ContainsKey(controllerName+"Controller"))
             {
-                return dict[controllerName].First().Value as Type;
+                return dict[controllerName+"Controller"].First().Value as Type;
             }
             else
             {

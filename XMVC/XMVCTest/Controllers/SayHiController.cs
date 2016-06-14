@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 //using System.Web.Mvc;
-using XMVC;
+//using XMVC;
+using XMVC_V2;
 namespace XMVCTest.Controllers
 {
     public class SayHiController : Controller
     {
-        public void Greet(HttpContext context)
+        public string Greet()
         {
-            ViewEnginee.RenderView(null,context.Server.MapPath("~/Views/xxxx.Jhtml"),context);
+            return "hello shenwei focus on what you do .Think less about how much it earns!";
+            //ViewEnginee.RenderView(null,context.Server.MapPath("~/Views/xxxx.Jhtml"),context);
         }
     }
 }

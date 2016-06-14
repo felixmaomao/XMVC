@@ -21,6 +21,10 @@ namespace XMVC_V2
         {
             get;set;
         }
+        public Controller Controller
+        {
+            get;set;
+        }
 
     }
 }

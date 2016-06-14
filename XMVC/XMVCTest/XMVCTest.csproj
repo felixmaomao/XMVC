@@ -164,6 +164,10 @@
       <Project>{ce9b6379-1538-4180-aaaa-c66e7552c677}</Project>
       <Name>XMVC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XMVC_V2\XMVC_V2.csproj">
+      <Project>{f7431ff4-2503-4546-a33f-872805fb95da}</Project>
+      <Name>XMVC_V2</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\xxxx.Jhtml" />

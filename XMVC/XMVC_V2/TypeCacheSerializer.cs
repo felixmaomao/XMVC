@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace XMVC_V2
 {
-    public abstract class ActionResult
+    public class TypeCacheSerializer
     {
-        public abstract void ExecuteResult(ControllerContext controllerContext);
     }
 }
