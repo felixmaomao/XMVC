@@ -28,8 +28,9 @@ namespace XMVC_V2
         public void ProcessInit(out IControllerFactory controllerFactory,out IController controller,ControllerContext controllerContext)
         {
             //Instanciate controllerFactory
+            string controllerName = controllerContext.RequestContext.RouteData.GetRequiredString("Controller");
             controllerFactory = new DefaultControllerFactory();
-            controller = controllerFactory.CreateController(controllerContext);
+            controller = controllerFactory.CreateController(controllerName);
             //关于这边的写法，我认为controllerContext不应该属于defaultcontrollerfactory，而应该只是作为外界传进去的一个参数，所以不应该把controllerContext作为工厂的一个属性或者变量存在。
         }
 

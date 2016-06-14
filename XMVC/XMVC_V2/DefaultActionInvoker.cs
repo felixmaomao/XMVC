@@ -16,7 +16,9 @@ namespace XMVC_V2
         public ActionResult InvokeActionMethod(ControllerContext controllerContext)
         {
             //use reflection to get action result.
+            //这边涉及到model bingding?
             ActionResult result = null;
+            string actionName = controllerContext.RequestContext.RouteData.GetRequiredString("Action");
             return result;
         }
     }

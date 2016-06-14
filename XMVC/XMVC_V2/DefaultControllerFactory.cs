@@ -12,11 +12,19 @@ namespace XMVC_V2
         {
             Type controllerType = GetControllerType(controllerName);
             return Activator.CreateInstance(controllerType) as IController;
-        }   
-         
+        }
+
         public Type GetControllerType(string controllerName)
         {
-
+            Dictionary<string, Dictionary<string, Type>> dict = ControllerTypeCache.Cache;
+            if (dict.ContainsKey(controllerName))
+            {
+                return dict[controllerName].First().Value as Type;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
