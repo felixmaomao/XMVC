@@ -51,12 +51,14 @@
     <Compile Include="DefaultActionInvoker.cs" />
     <Compile Include="DefaultControllerFactory.cs" />
     <Compile Include="IActionInvoker.cs" />
+    <Compile Include="IBuildManager.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="IControllerFactory.cs" />
     <Compile Include="MvcHandler.cs" />
     <Compile Include="MvcRouteHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeCacheSerializer.cs" />
+    <Compile Include="TypeCacheUtil.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

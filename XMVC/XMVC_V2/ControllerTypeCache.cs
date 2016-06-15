@@ -18,6 +18,7 @@ namespace XMVC_V2
         }
         //这边势必应该对结果做个文件缓存，否则第一次会很慢？ 该是什么样的优化方式呢？？mvc4中仍然是将其缓存成文件保存在硬盘上
         //这样，第一次直接读取文件貌似比整体查找要快一点
+        //我下面的这种写法就比较呆板了。直接定位死了controller。然而实际上这部分工作分包给TypeCacheUtil要优美的多。
         public static void FillInTheCache()
         {
             ICollection allReferencedAssemblies = BuildManager.GetReferencedAssemblies();
