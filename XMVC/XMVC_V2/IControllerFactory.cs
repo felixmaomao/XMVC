@@ -9,5 +9,6 @@ namespace XMVC_V2
     public interface IControllerFactory
     {
         IController CreateController(string controllerName);
+        void ReleaseController(IController controller);
     }
 }

@@ -60,3 +60,5 @@ E:\XMVC\XMVC\XMVC\XMVCTest\bin\System.Web.Razor.xml
 E:\XMVC\XMVC\XMVC\XMVCTest\bin\System.Web.WebPages.xml
 E:\XMVC\XMVC\XMVC\XMVCTest\bin\System.Web.WebPages.Deployment.xml
 E:\XMVC\XMVC\XMVC\XMVCTest\bin\System.Web.WebPages.Razor.xml
+F:\Personal\XMVC\XMVC\XMVCTest\bin\XMVC_V2.dll
+F:\Personal\XMVC\XMVC\XMVCTest\bin\XMVC_V2.pdb

@@ -3,3 +3,8 @@ E:\XMVC\XMVC\XMVC\XMVC_V2\bin\Debug\XMVC_V2.pdb
 E:\XMVC\XMVC\XMVC\XMVC_V2\obj\Debug\XMVC_V2.csprojResolveAssemblyReference.cache
 E:\XMVC\XMVC\XMVC\XMVC_V2\obj\Debug\XMVC_V2.dll
 E:\XMVC\XMVC\XMVC\XMVC_V2\obj\Debug\XMVC_V2.pdb
+F:\Personal\XMVC\XMVC\XMVC_V2\bin\Debug\XMVC_V2.dll
+F:\Personal\XMVC\XMVC\XMVC_V2\bin\Debug\XMVC_V2.pdb
+F:\Personal\XMVC\XMVC\XMVC_V2\obj\Debug\XMVC_V2.csprojResolveAssemblyReference.cache
+F:\Personal\XMVC\XMVC\XMVC_V2\obj\Debug\XMVC_V2.dll
+F:\Personal\XMVC\XMVC\XMVC_V2\obj\Debug\XMVC_V2.pdb

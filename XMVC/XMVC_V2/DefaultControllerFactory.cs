@@ -34,5 +34,14 @@ namespace XMVC_V2
                 return null;
             }
         }
+
+        public void ReleaseController(IController controller)
+        {
+            IDisposable disposable = controller as IDisposable;
+            if (disposable!=null)
+            {
+                disposable.Dispose();
+            }
+        }
     }
 }
