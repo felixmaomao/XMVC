@@ -10,7 +10,7 @@ namespace XMVC_V2
 {
     internal static class TypeCacheUtil
     {
-        //时时刻刻能感受到，是我要怎么写代码，而不是我只能如何写代码。我真正驾驭着代码。
+        //时时刻刻能感受到，是我要怎么写代码，而不是我只能如何写代码,而是我真正驾驭着代码。
         private static IEnumerable<Type> FilterTypesInAssemblies(IBuildManager buildManager,Predicate<Type> predict)
         {
             //遍历所有的引用的assembly去找到匹配predict的Type
@@ -23,5 +23,8 @@ namespace XMVC_V2
             }
             return typesSoFar.Where(type=>predict(type));
         }
+
+        //为了提升性能，这里提供基于文件的缓存策略，而不需要每次重新遍历
+
     }
 }
