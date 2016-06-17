@@ -24,7 +24,30 @@ namespace XMVC_V2
             return typesSoFar.Where(type=>predict(type));
         }
 
+        //读取全部是从缓存文件中读，若为空先写入缓存，再读取。（基本上所有的涉及缓存的操作都是这么个套路）
+        public static IEnumerable<Type> GetFilteredTypesFromAssemblies(string cacheName,IBuildManager buildManager,Predicate<Type> predict)
+        {
+            TypeCacheSerializer serializer = new TypeCacheSerializer();
+            IEnumerable<Type> matchingTypes = ReadTypesFromCache(cacheName,predict,buildManager,serializer);
+            if (matchingTypes!=null)
+            {
+                return matchingTypes;
+            }
+            matchingTypes = FilterTypesInAssemblies(buildManager,predict);
+            SaveTypesToCache(cacheName,matchingTypes,buildManager,serializer);
+            return matchingTypes;
+        }
+
         //为了提升性能，这里提供基于文件的缓存策略，而不需要每次重新遍历
+        private static IEnumerable<Type> ReadTypesFromCache(string cacheName,Predicate<Type> predict,IBuildManager buildManager,TypeCacheSerializer serializer)
+        {
+            return null; //涉及到文件又不会了。。。
+        }
+
+        public static void SaveTypesToCache(string cacheName,IEnumerable<Type> matchingTypes,IBuildManager builderManager,TypeCacheSerializer serializer)
+        {
+
+        }
 
     }
 }

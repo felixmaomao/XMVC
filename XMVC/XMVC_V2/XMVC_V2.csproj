@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResult.cs" />
+    <Compile Include="BuildManagerWrapper.cs" />
     <Compile Include="ContentResult.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="ControllerContext.cs" />
