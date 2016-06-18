@@ -53,7 +53,17 @@ namespace XMVC_V2
             IEnumerable<Type> controllerTypes = TypeCacheUtil.GetFilteredTypesFromAssemblies(_cacheName,builderManager,IsControllerType);
             foreach (var type in controllerTypes)
             {
-
+                if (_cache.ContainsKey(type.Name))
+                {
+                    Dictionary<string, Type> dict = _cache[type.Name];
+                    dict.Add(type.FullName,type);
+                }
+                else
+                {
+                    Dictionary<string, Type> dict = new Dictionary<string, Type>();
+                    dict.Add(type.FullName,type);
+                    _cache.Add(type.Name,dict);
+                }
             }
         }
 

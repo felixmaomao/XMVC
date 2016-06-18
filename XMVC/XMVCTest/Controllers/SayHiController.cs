@@ -12,7 +12,7 @@ namespace XMVCTest.Controllers
     {
         public string Greet()
         {
-            return "hello shenwei focus on what you do .Think less about how much it earns!";
+            return "hello shenwei focus on what you do .Think less about how much it earns! GC i closed to managed heap!";
             //ViewEnginee.RenderView(null,context.Server.MapPath("~/Views/xxxx.Jhtml"),context);
         }
         public string GreetProductive()
