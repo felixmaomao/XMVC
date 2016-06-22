@@ -55,6 +55,8 @@
     <Compile Include="IBuildManager.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="IControllerFactory.cs" />
+    <Compile Include="JsonRequestBehavior.cs" />
+    <Compile Include="JsonResult.cs" />
     <Compile Include="MvcHandler.cs" />
     <Compile Include="MvcRouteHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
