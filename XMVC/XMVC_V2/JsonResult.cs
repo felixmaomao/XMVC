@@ -49,9 +49,7 @@ namespace XMVC_V2
             if (ContentEncoding!=null)
             {
                 response.ContentEncoding = ContentEncoding;
-            }
-
-             
+            }             
         }
     }
 }
